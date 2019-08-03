@@ -1,15 +1,30 @@
 import React from "react"
 import ReactDOM from 'react-dom'
+import MainContext from './Components/MainContext.jsx'
+import Announcer from './Components/Announcer.jsx'
+import Updater from './Components/Updater.jsx'
 
 class Main extends React.Component {
     constructor(){
         super();
+        var me = this;
+        this.state ={
+            Winner:"Manh Le",
+            Count: 1,
+            update:function(x,v){
+                this[x] = v;
+                me.setState(this);
+            }
+        }
     }
 
     render(){
-        return (<div>
-            Manh Le is cool
-        </div>)
+        return (
+            <MainContext.Provider value={this.state}>
+                <Announcer/>
+                <Updater/>
+            </MainContext.Provider>
+        )
     }
 }
 export default Main;
