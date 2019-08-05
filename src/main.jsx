@@ -5,6 +5,7 @@ import Announcer from './Components/Announcer.jsx'
 import Updater from './Components/Updater.jsx'
 import SelectHook from './Components/SelectHook.jsx'
 
+
 class Main extends React.Component {
     constructor(){
         super();
@@ -17,9 +18,11 @@ class Main extends React.Component {
                 me.setState(this);
             }
         }
+
     }
 
     render(){
+      
         return (
             <MainContext.Provider value={this.state}>
                 <Announcer/>

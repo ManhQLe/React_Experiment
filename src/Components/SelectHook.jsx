@@ -1,9 +1,13 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import ReactDOM from 'react-dom'
 
 function SelectHook() {
     var [sel,setSel] = useState(0);
     const os = ["One", "Two", "Tree"];
+
+    useEffect(()=>{
+        console.log("Rendered");
+    })
 
     function change(e){
         setSel(e.target.selectedIndex);
